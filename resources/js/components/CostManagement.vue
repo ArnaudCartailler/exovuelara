@@ -1,9 +1,5 @@
 <style>
 
-.bck {
-  background-color: #303030;
-}
-
 </style>
 
 <template>

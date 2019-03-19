@@ -2,18 +2,15 @@
 .tltl {
   background-color: #282a4c !important;
 }
+
+.outlined {
+  border: 1px solid white;
+  color: white !important;
+}
 </style>
 
 <template>
   <div id="app" class="wowo">
-    <!-- <v-app id="inspire"> -->
-    <v-list class="pa-0">
-      <v-list-tile>
-        <v-list-tile-content>
-          <span>{{ $lang.costmanagement._total_cost}} {{ totalCost }} </span>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
     <div>
       <v-data-table
         :headers="headers"
@@ -45,29 +42,17 @@
             <td class="text-md-right">{{ props.item.cost }}</td>
           </tr>
         </template>
-
-        <!-- <template slot="expand" slot-scope="props">
-            <v-card
-              flat
-              v-for="(instance, i) in instances"
-              :key="i"
-              class="light test2"
-            >
-              <v-list dense class="accent2">
-                <v-list-tile>
-                  <v-list-tile-content xs4>
-                    <v-list-tile-title>{{ getInstancesV2(name).instance }}</v-list-tile-title>
-                  </v-list-tile-content>
-                  <v-list-tile-content class="text-md-right" xs4>
-                    <v-list-tile-sub-title>{{ instance.cost }}</v-list-tile-sub-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </v-list>
-            </v-card>
-        </template>-->
       </v-data-table>
     </div>
-    <!-- </v-app> -->
+    <v-container fluid>
+      <v-layout justify-end row wrap>
+        <v-card class="pa-0 outlined">
+          <v-list-tile>
+            <v-list-tile-content>{{ $lang.costmanagement._total_cost}} {{ "$ " + totalCost }}</v-list-tile-content>
+          </v-list-tile>
+        </v-card>
+      </v-layout>
+    </v-container>
   </div>
 </template>
 
@@ -141,8 +126,8 @@ export default {
     this.instances.map(x => (sum += x.cost));
 
     function Round(sum) {
-        return Math.round(1000 * sum) / 1000;
-    };
+      return Math.round(1000 * sum) / 1000;
+    }
 
     this.totalCost = Round(sum);
   },

@@ -1,181 +1,159 @@
 <style>
 .resizefilter {
-  margin: -40px auto auto auto;
+  margin-top: -50px;
+  padding: 20px 0px;
+  width: 100%;
 }
 </style>
 
 <template>
   <v-container fluid grid-list-xl class="resizefilter">
-    <v-layout row wrap>
-      <v-flex xs12 sm12 md3>
-        <v-select
-          color="primary"
-          label="Provider"
-          background-color="#4e3a6f"
-          v-model="filterList"
-          :items="filters.provider"
-          item-text="value"
-          return-object
-          height="10"
-          box
-          small-chips
-          deletable-chips
-          multiple
-          dark
-        ></v-select>
-      </v-flex>
-      <v-flex xs12 sm12 md3>
-        <v-select
-          color="primary"
-          label="Category"
-          background-color="#4e3a6f"
-          v-model="filterList"
-          :items="filters.product_category"
-          item-text="value"
-          return-object
-          height="10"
-          box
-          small-chips
-          deletable-chips
-          multiple
-          flat
-          dark
-        ></v-select>
-      </v-flex>
-      <v-flex xs12 sm12 md3>
-        <v-select
-          color="primary"
-          label="Products"
-          background-color="#4e3a6f"
-          v-model="filterList"
-          :items="filters.product"
-          item-text="value"
-          return-object
-          height="10"
-          box
-          small-chips
-          deletable-chips
-          multiple
-          dark
-        ></v-select>
-      </v-flex>
-      <v-flex xs12 sm12 md3>
-        <v-select
-          color="primary"
-          label="Instance"
-          background-color="#4e3a6f"
-          v-model="filterList"
-          :items="filters.instance_type"
-          item-text="value"
-          return-object
-          height="10"
-          box
-          small-chips
-          deletable-chips
-          multiple
-          dark
-        ></v-select>
-      </v-flex>
-    </v-layout>
-    <v-layout row wrap>
-      <v-flex xs12 sm12 md4 class="resizefilter">
-        <v-select
-          color="primary"
-          label="Status"
-          background-color="#4e3a6f"
-          v-model="filterList"
-          :items="filters.status"
-          item-text="value"
-          return-object
-          height="10"
-          box
-          small-chips
-          deletable-chips
-          multiple
-          dark
-        ></v-select>
-      </v-flex>
-      <v-flex xs12 sm12 md4 class="resizefilter">
-        <v-menu
-          v-model="menu1"
-          :close-on-content-click="false"
-          :nudge-right="40"
-          lazy
-          transition="scale-transition"
-          offset-y
-          full-width
-          max-width="290px"
-          min-width="290px"
-          color="primary"
-        >
-          <template v-slot:activator="{ on }">
-            <v-text-field
+    <v-card elevation-5>
+      <v-layout row wrap class="px-4 pt-4">
+        <v-flex xs12 sm12 md3>
+          <v-select
+            color="primary"
+            label="Provider"
+            v-model="filterList"
+            :items="filters.provider"
+            item-text="value"
+            return-object
+            height="10"
+            box
+            small-chips
+            deletable-chips
+            multiple
+            dark
+          ></v-select>
+        </v-flex>
+        <v-flex xs12 sm12 md3>
+          <v-select
+            color="primary"
+            label="Category"
+            v-model="filterList"
+            :items="filters.product_category"
+            item-text="value"
+            return-object
+            height="10"
+            box
+            small-chips
+            deletable-chips
+            multiple
+            flat
+            dark
+          ></v-select>
+        </v-flex>
+        <v-flex xs12 sm12 md3>
+          <v-select
+            color="primary"
+            label="Products"
+            v-model="filterList"
+            :items="filters.product"
+            item-text="value"
+            return-object
+            height="10"
+            box
+            small-chips
+            deletable-chips
+            multiple
+            dark
+          ></v-select>
+        </v-flex>
+        <v-flex xs12 sm12 md3>
+          <v-select
+            color="primary"
+            label="Instance"
+            v-model="filterList"
+            :items="filters.instance_type"
+            item-text="value"
+            return-object
+            height="10"
+            box
+            small-chips
+            deletable-chips
+            multiple
+            dark
+          ></v-select>
+        </v-flex>
+      </v-layout>
+      <v-layout row wrap class="px-4">
+        <v-flex xs12 sm12 md4>
+          <v-select
+            color="primary"
+            label="Status"
+            v-model="filterList"
+            item-text="value"
+            return-object
+            height="10"
+            box
+            small-chips
+            deletable-chips
+            multiple
+            dark
+          ></v-select>
+        </v-flex>
+        <v-flex xs12 sm12 md4>
+          <v-menu
+            v-model="menu1"
+            :close-on-content-click="false"
+            :nudge-right="40"
+            lazy
+            transition="scale-transition"
+            offset-y
+            full-width
+            max-width="290px"
+            min-width="290px"
+            color="primary"
+          >
+            <template v-slot:activator="{ on }">
+              <v-text-field
+                v-model="date.from"
+                background-color="#3b3b3b"
+                :label="$lang.services._period_from"
+                prepend-icon="event"
+                readonly
+                v-on="on"
+                dark
+              ></v-text-field>
+            </template>
+            <v-date-picker
               v-model="date.from"
-              :label="$lang.services._period_from"
-              prepend-icon="event"
-              readonly
-              v-on="on"
-              dark
-            ></v-text-field>
-          </template>
-          <v-date-picker v-model="date.from" no-title @input="menu1 = false"></v-date-picker>
-        </v-menu>
-      </v-flex>
-      <v-flex xs12 sm12 md4 class="resizefilter">
-        <v-menu
-          v-model="menu2"
-          :close-on-content-click="false"
-          :nudge-right="40"
-          lazy
-          transition="scale-transition"
-          offset-y
-          full-width
-          max-width="290px"
-          min-width="290px"
-          color="primary"
-        >
-          <template v-slot:activator="{ on }">
-            <v-text-field
-              v-model="date.to"
-              :label="$lang.services._to"
-              prepend-icon="event"
-              readonly
-              v-on="on"
-              dark
-            ></v-text-field>
-          </template>
-          <v-date-picker v-model="date.to" no-title @input="menu2 = false"></v-date-picker>
-        </v-menu>
-      </v-flex>
-      <!-- <v-flex xs12 sm12 md4 class="resizefilter">
-        <v-flex shrink style="width: 60px">
-          <v-text-field v-model="value3[0]" class="mt-0" hide-details single-line type="number"></v-text-field>
+              locale="fr-fr"
+              no-title
+              @input="menu1 = false"
+            ></v-date-picker>
+          </v-menu>
         </v-flex>
-
-        <v-flex class="px-3">
-          <v-range-slider v-model="value3" :max="600" :min="20" :step="10"></v-range-slider>
+        <v-flex xs12 sm12 md4>
+          <v-menu
+            v-model="menu2"
+            :close-on-content-click="false"
+            :nudge-right="40"
+            lazy
+            transition="scale-transition"
+            offset-y
+            full-width
+            max-width="290px"
+            min-width="290px"
+            color="primary"
+          >
+            <template v-slot:activator="{ on }">
+              <v-text-field
+                v-model="date.to"
+                background-color="#3b3b3b"
+                :items="filters.created_at"
+                :label="$lang.services._to"
+                prepend-icon="event"
+                readonly
+                v-on="on"
+                dark
+              ></v-text-field>
+            </template>
+            <v-date-picker v-model="date.to" locale="fr-fr" no-title @input="menu2 = false"></v-date-picker>
+          </v-menu>
         </v-flex>
-
-        <v-flex shrink style="width: 60px">
-          <v-text-field v-model="value3[1]" class="mt-0" hide-details single-line type="number"></v-text-field>
-        </v-flex>
-      </v-flex>-->
-      <!-- <v-card-text>
-        <v-layout row>
-          <v-flex shrink style="width: 60px">
-            <v-text-field v-model="value3[0]" class="mt-0" hide-details single-line type="number"></v-text-field>
-          </v-flex>
-
-          <v-flex class="px-3">
-            <v-range-slider v-model="value3" :max="600" :min="20" :step="10"></v-range-slider>
-          </v-flex>
-
-          <v-flex shrink style="width: 60px">
-            <v-text-field v-model="value3[1]" class="mt-0" hide-details single-line type="number"></v-text-field>
-          </v-flex>
-        </v-layout>
-      </v-card-text>-->
-    </v-layout>
+      </v-layout>
+    </v-card>
   </v-container>
 </template>
 
@@ -186,8 +164,8 @@ export default {
       menu1: false,
       menu2: false,
       date: {
-          from: new Date().toISOString().substr(0, 10),
-          to: new Date().toISOString().substr(0, 10)
+        from: new Date().toISOString().substr(0, 10),
+        to: new Date().toISOString().substr(0, 10)
       },
       //   value3: [110, 440],
       filterList: [],
@@ -304,7 +282,6 @@ export default {
   },
 
   computed: {
-
     formatDateFrom() {
       return this.formatDate(this.date.from);
     },
