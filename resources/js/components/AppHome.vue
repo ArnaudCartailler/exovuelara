@@ -1,25 +1,12 @@
 <template>
-    <div>
-        <toolbar></toolbar>
-        <calendar></calendar>
-        <tree></tree>
+    <v-content>
         <router-view></router-view>
-    </div>
-
+    </v-content>
 </template>
 
 <script>
 
-import toolbar from './Toolbar'
-import tree from './Tree'
-import calendar from './Calendar'
-
-export default {
-    components:{toolbar, tree, calendar}
-}
-
 </script>
 
 <style>
-
 </style>

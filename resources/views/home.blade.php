@@ -8,14 +8,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-    <div id="app">
-        <v-app>
-            <app-home></app-home>
-        </v-app>
-    </div>
+    </head>
 
-    <script src="{{asset('js/app.js')}}"></script>
-</body>
+    <body>
+        <div id="app">
+            <v-app dark>
+                <app-home></app-home>
+            </v-app>
+        </div>
+
+        <script src="{{asset('js/app.js')}}"></script>
+    </body>
 </html>
+

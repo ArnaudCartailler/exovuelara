@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "provider": "AWS",
+    "product": "AmazonEC2",
+    "product_category": "compute",
+    "name": "AmazonEC2/i-815zd54d4sd54sv2",
+    "instance_id": "i-815zd54d4sd54sv2",
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "active",
+    "cost": 47.42
+  },
+  {
+    "id": 3,
+    "provider": "AWS",
+    "product": "AmazonSES",
+    "product_category": "other",
+    "name": "AmazonSES/eu-west-1",
+    "instance_id": null,
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "active",
+    "cost": 458.78
+  },
+  {
+    "id": 45,
+    "provider": "OVH",
+    "product": "PublicCloud",
+    "product_category": "compute",
+    "name": "PublicCloud/dazz-dz4-e4542ze-ze45ez4",
+    "instance_id": "dazz-dz4-e4542ze-ze45ez4",
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "deleted",
+    "cost": 0.28
+  },
+  {
+    "id": 4587,
+    "provider": "AWS",
+    "product": "AmazonS3",
+    "product_category": "storage",
+    "name": "AmazonS3/vol-454fez56zefe45rg55e4",
+    "instance_id": "vol-454fez56zefe45rg55e4",
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "active",
+    "cost": 0.28
+  },
+  {
+    "id": 14545,
+    "provider": "AWS",
+    "product": "AmazonEC2",
+    "product_category": "compute",
+    "name": "AmazonEC2/i-815zd54d4sd54sv2",
+    "instance_id": "i-815zd54d4sd54sv2",
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "active",
+    "cost": 134.51
+  },
+  {
+    "id": 12128,
+    "provider": "AWS",
+    "product": "AmazonEC2",
+    "product_category": "compute",
+    "name": "AmazonEC2/i-815zd54d4sd54sv2",
+    "instance_id": "i-815zd54d4sd54sv2",
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "active",
+    "cost": 1271.45
+  },
+  {
+    "id": 154645,
+    "provider": "AWS",
+    "product": "AmazonWorkSpace",
+    "product_category": "compute",
+    "name": "AmazonWorkSpace/arn:aws-data",
+    "instance_id": "arn:aws-data",
+    "created_at": "2019-03-01 11:45:20",
+    "updated_at": "2019-09-04 17:52:25",
+    "status": "active",
+    "cost": 458.52
+  }
+]
