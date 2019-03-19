@@ -1,14 +1,10 @@
 <style>
-.resizefilter {
-  margin-top: -50px;
-  padding: 20px 0px;
-  width: 100%;
-}
+
 </style>
 
 <template>
-  <v-container fluid grid-list-xl class="resizefilter">
-    <v-card elevation-5>
+  <v-container fluid grid-list-xl pa-0>
+    <v-card flat>
       <v-layout row wrap class="px-4 pt-4">
         <v-flex xs12 sm12 md3>
           <v-select

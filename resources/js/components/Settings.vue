@@ -1,12 +1,16 @@
 <style>
+
+.tyty{
+    margin-top: 0;
+}
 </style>
 
 <template>
-  <v-container fluid fill-height>
+  <v-container fluid fill-height pa-0>
     <navigation-drawer></navigation-drawer>
     <v-layout align-start justify-start>
-      <v-flex xs12 md12 pa-2>
-        <v-toolbar color="accent" dark tabs>
+      <v-flex xs12 md12 pa-0>
+        <v-toolbar color="accent" dark tabs >
           <v-tabs
             slot="extension"
             color="transparent"

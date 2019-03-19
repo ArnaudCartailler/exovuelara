@@ -3,7 +3,7 @@
 </style>
 
 <template>
-  <v-container class="w-100">
+  <v-container class="w-100" pa-0>
     <navigation-drawer></navigation-drawer>
     <filter-item></filter-item>
     <v-flex>
