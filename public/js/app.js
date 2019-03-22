@@ -2290,6 +2290,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3565,32 +3576,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3627,31 +3612,34 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: ["userInfo"],
   created: function created() {},
-  mounted: function mounted() {// let _this = this;
-    // this.$root.$on("modalClosed", function() {
-    //   _this.createModalActive = !this.createModalActive;
-    // });
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$root.$on("modalClosed", function () {
+      _this.createModalActive = !this.createModalActive;
+    });
   },
-  methods: {// create() {
-    //   axios
-    //     .post("/api/user/create", this.form)
-    //     .then(res => {
-    //       if (res.data.success) {
-    //         this.userCreationState = this.$lang.user._creation_success;
-    //         this.snackbar = true;
-    //         this.getUsers();
-    //       } else {
-    //         this.userCreationState = this.$lang.user._creation_failed;
-    //         this.snackbar = true;
-    //       }
-    //     })
-    //     .catch(err => {
-    //       console.warn(err.response.data);
-    //     });
-    // },
-    // openModal() {
-    //   this.createModalActive = !this.createModalActive;
-    // }
+  methods: {
+    create: function create() {
+      var _this2 = this;
+
+      axios.post("/api/user/create", this.form).then(function (res) {
+        if (res.data.success) {
+          _this2.userCreationState = _this2.$lang.user._creation_success;
+          _this2.snackbar = true;
+
+          _this2.getUsers();
+        } else {
+          _this2.userCreationState = _this2.$lang.user._creation_failed;
+          _this2.snackbar = true;
+        }
+      }).catch(function (err) {
+        console.warn(err.response.data);
+      });
+    },
+    openModal: function openModal() {
+      this.createModalActive = !this.createModalActive;
+    }
   }
 });
 
@@ -24046,7 +24034,7 @@ exports.push([module.i, "\n.img-background {\n  background: #f5f5f5;\n  height: 
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.title {\n  margin-left: 40px;\n}\n", ""]);
+exports.push([module.i, "\n.title {\r\n  margin-left: 40px;\n}\r\n", ""]);
 
 
 
@@ -24061,7 +24049,7 @@ exports.push([module.i, "\n.title {\n  margin-left: 40px;\n}\n", ""]);
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.tltl {\n  background-color: #282a4c !important;\n}\n.outlined {\n  border: 1px solid white;\n  color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.tltl {\r\n  background-color: #282a4c !important;\n}\n.outlined {\r\n  border: 1px solid white;\r\n  color: white !important;\n}\r\n", ""]);
 
 
 
@@ -24076,7 +24064,7 @@ exports.push([module.i, "\n.tltl {\n  background-color: #282a4c !important;\n}\n
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.sumdate {\n  color: #90ee90;\n}\n.resizecomp\n{\n    margin-top : -30px;\n    width: 90%;\n}\n", ""]);
+exports.push([module.i, "\n.sumdate {\r\n  color: #90ee90;\n}\n.resizecomp\r\n{\r\n    margin-top : -30px;\r\n    width: 90%;\n}\r\n", ""]);
 
 
 
@@ -24091,7 +24079,7 @@ exports.push([module.i, "\n.sumdate {\n  color: #90ee90;\n}\n.resizecomp\n{\n   
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.bar{\n    width: 50%;\n    margin: auto;\n}\n", ""]);
+exports.push([module.i, "\n.bar{\r\n    width: 50%;\r\n    margin: auto;\n}\r\n", ""]);
 
 
 
@@ -24106,7 +24094,7 @@ exports.push([module.i, "\n.bar{\n    width: 50%;\n    margin: auto;\n}\n", ""])
 
 exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.bibi {\n  border: 1px solid white;\n  width: 100%;\n  color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.bibi {\r\n  border: 1px solid white;\r\n  width: 100%;\r\n  color: white !important;\n}\r\n", ""]);
 
 
 
@@ -57155,7 +57143,6 @@ var render = function() {
               [
                 _c(
                   "v-list",
-                  { attrs: { "two-line": "" } },
                   [
                     _c(
                       "v-list-tile",
@@ -57164,15 +57151,12 @@ var render = function() {
                           "v-list-tile-content",
                           [
                             _c(
-                              "v-list-tile-title",
-                              { staticClass: "primary--text" },
-                              [
-                                _c("h4", [
-                                  _vm._v(
-                                    _vm._s(user.firstname + " " + user.lastname)
-                                  )
-                                ])
-                              ]
+                              "v-card-title",
+                              {
+                                staticClass:
+                                  "primary--text font-weight-bold headline"
+                              },
+                              [_vm._v(_vm._s(_vm.$lang.user._my_account))]
                             ),
                             _vm._v(" "),
                             _c("v-list-tile-sub-title", [
@@ -57188,7 +57172,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c("hr", { staticClass: "ma-0" }),
+                _c("hr", { staticClass: "mt-3" }),
                 _vm._v(" "),
                 _c(
                   "v-list",
@@ -57553,6 +57537,8 @@ var render = function() {
     "v-container",
     { attrs: { row: "", wrap: "", "ma-0": "", "m-w-100": "", dark: "" } },
     [
+      _c("add-user"),
+      _vm._v(" "),
       _c(
         "v-flex",
         { attrs: { xs12: "", "pa-2": "", dark: "" } },
@@ -57563,33 +57549,43 @@ var render = function() {
             [
               _c(
                 "v-layout",
-                { attrs: { wrap: "" } },
+                { attrs: { row: "", wrap: "", "justify-start": "" } },
                 [
                   _c(
-                    "v-flex",
-                    { attrs: { xs12: "", sm6: "", md4: "" } },
+                    "v-list",
                     [
                       _c(
-                        "v-card-title",
-                        { staticClass: "display-1 primary--text" },
-                        [_vm._v(_vm._s(_vm.$lang.user._users_list))]
+                        "v-list-tile",
+                        [
+                          _c(
+                            "v-list-tile-content",
+                            [
+                              _c(
+                                "v-card-title",
+                                {
+                                  staticClass:
+                                    "primary--text font-weight-bold headline"
+                                },
+                                [_vm._v(_vm._s(_vm.$lang.user._users_list))]
+                              ),
+                              _vm._v(" "),
+                              _c("v-list-tile-sub-title", [
+                                _vm._v(_vm._s(_vm.userRole))
+                              ])
+                            ],
+                            1
+                          )
+                        ],
+                        1
                       )
                     ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-flex",
-                    {
-                      staticClass: "mt-3",
-                      attrs: { xs12: "", sm6: "", md4: "" }
-                    },
-                    [_c("add-user")],
                     1
                   )
                 ],
                 1
               ),
+              _vm._v(" "),
+              _c("hr", { staticClass: "mt-3" }),
               _vm._v(" "),
               _c(
                 "v-list",
@@ -59189,7 +59185,9 @@ var render = function() {
             "v-card",
             { attrs: { dark: "" } },
             [
-              _c("v-card-title", [_vm._v(_vm._s(_vm.$lang.user._create_user))]),
+              _c("v-card-title", [
+                _vm._v(_vm._s(_vm.$lang.user._modify_password))
+              ]),
               _vm._v(" "),
               _c(
                 "form",
@@ -59207,82 +59205,21 @@ var render = function() {
                             [
                               _c(
                                 "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      label: _vm.$lang.user._username,
-                                      value: _vm.userInfo.username
-                                    },
-                                    model: {
-                                      value: _vm.userInfo.username,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.userInfo, "username", $$v)
-                                      },
-                                      expression: "userInfo.username"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      label: _vm.$lang.user._firstname,
-                                      value: _vm.userInfo.firstname
-                                    },
-                                    model: {
-                                      value: _vm.userInfo.firstname,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.userInfo, "firstname", $$v)
-                                      },
-                                      expression: "userInfo.firstname"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "", sm6: "", md4: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      label: _vm.$lang.user._lastname,
-                                      value: _vm.userInfo.lastname
-                                    },
-                                    model: {
-                                      value: _vm.userInfo.lastname,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.userInfo, "lastname", $$v)
-                                      },
-                                      expression: "userInfo.lastname"
-                                    }
-                                  })
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
                                 { attrs: { xs12: "" } },
                                 [
                                   _c("v-text-field", {
                                     attrs: {
-                                      label: _vm.$lang.user._email,
-                                      value: _vm.userInfo.email
+                                      label: _vm.$lang.user._last_password,
+                                      type: "password",
+                                      required: ""
                                     },
-                                    model: {
-                                      value: _vm.userInfo.email,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.userInfo, "email", $$v)
+                                    on: {
+                                      input: function($event) {
+                                        return _vm.$v.password.$touch()
                                       },
-                                      expression: "userInfo.email"
+                                      blur: function($event) {
+                                        return _vm.$v.password.$touch()
+                                      }
                                     }
                                   })
                                 ],
@@ -59334,27 +59271,6 @@ var render = function() {
                                   })
                                 ],
                                 1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-flex",
-                                { attrs: { xs12: "" } },
-                                [
-                                  _c("v-text-field", {
-                                    attrs: {
-                                      label: _vm.$lang.user._company_name,
-                                      value: _vm.userInfo.company
-                                    },
-                                    model: {
-                                      value: _vm.userInfo.company,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.userInfo, "company", $$v)
-                                      },
-                                      expression: "userInfo.company"
-                                    }
-                                  })
-                                ],
-                                1
                               )
                             ],
                             1
@@ -59384,7 +59300,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Close")]
+                    [_vm._v(" " + _vm._s(_vm.$lang.user._close_message))]
                   ),
                   _vm._v(" "),
                   _c(
@@ -59414,12 +59330,15 @@ var render = function() {
                         "v-card",
                         [
                           _c("v-card-title", { staticClass: "headline" }, [
-                            _vm._v("Êtes-vous sûr ?")
+                            _vm._v(_vm._s(_vm.$lang.user._are_you_sure))
                           ]),
                           _vm._v(" "),
                           _c("v-card-text", [
                             _vm._v(
-                              "Vous allez modifier des informations lié à un compte."
+                              _vm._s(
+                                _vm.$lang.user
+                                  ._you_are_going_to_modify_information_from_the_account
+                              )
                             )
                           ]),
                           _vm._v(" "),
@@ -59438,7 +59357,7 @@ var render = function() {
                                     }
                                   }
                                 },
-                                [_vm._v("Annuler")]
+                                [_vm._v(" " + _vm._s(_vm.$lang.user._cancel))]
                               ),
                               _vm._v(" "),
                               _c(
@@ -59451,7 +59370,7 @@ var render = function() {
                                     }
                                   }
                                 },
-                                [_vm._v("J'accepte")]
+                                [_vm._v(" " + _vm._s(_vm.$lang.user._i_agree))]
                               )
                             ],
                             1
@@ -102361,6 +102280,7 @@ module.exports = {
   _password_max_length: 'Le mot de passe est trop long',
   _password_required: 'Veuillez saisir votre mot de passe',
   _passwords_dont_match: 'Les mots de passe ne correspondent pas',
+  _last_password: 'Ancien mot de passe',
   _new_password: 'Votre nouveau mot de passe',
   _username_required: 'Veuillez saisir votre nom d\'utilisateur',
   _username_max_length: 'Le nom d\'utilisateur est trop long',
@@ -102374,9 +102294,15 @@ module.exports = {
   _company_name_max_length: 'Le nom de l\'entreprise est trop long',
   _company_name_required: 'Veuillez saisir le nom de votre entreprise',
   _required_fields: '* Ces champs sont requis',
+  _modify_password: 'Modifier Mot de Passe',
   _creation_success: 'L\'utilisateur a bien été ajouté dans la base de données',
   _creation_failed: 'Une erreur est survenue lors de la création de l\'utilisateur',
   _close_message: 'Fermer',
+  _are_you_sure: 'Etes-vous sûr ?',
+  _you_are_going_to_modify_information_from_the_account: 'Vous allez modifier des informations lié à un compte.',
+  _cancel: 'Annuler',
+  _i_agree: 'J\'accepte',
+  _my_account: 'Mon compte',
   _account: 'Compte',
   _users: 'Utilisateurs',
   _created_at: 'Crée le',

@@ -9,18 +9,18 @@
   <v-container row wrap ma-0 m-w-100 dark>
     <v-flex xs12 pa-2>
       <v-card class="border-div-primary" dark v-for="(user, i) in user" :key="i">
-        <v-list two-line>
+        <v-list>
           <v-list-tile>
             <v-list-tile-content>
-              <v-list-tile-title class="primary--text">
-                <h4>{{ user.firstname + " " + user.lastname }}</h4>
-              </v-list-tile-title>
+              <v-card-title
+                class="primary--text font-weight-bold headline"
+              >{{ $lang.user._my_account}}</v-card-title>
               <v-list-tile-sub-title>{{ userRole }}</v-list-tile-sub-title>
             </v-list-tile-content>
           </v-list-tile>
         </v-list>
-        <hr class="ma-0">
-        <v-list two-line >
+        <hr class="mt-3">
+        <v-list two-line>
           <v-list-tile>
             <v-list-tile-avatar>
               <v-icon large color="primary">mdi-at</v-icon>
@@ -121,7 +121,6 @@ export default {
     this.getRole();
 
     this.user = getUser();
-
   },
 
   computed: {},

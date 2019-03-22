@@ -7,16 +7,27 @@
 
 <template>
   <v-container row wrap ma-0 m-w-100 dark>
+    <add-user></add-user>
     <v-flex xs12 pa-2 dark>
       <v-card flat dark>
-        <v-layout wrap>
-          <v-flex xs12 sm6 md4>
+        <v-layout row wrap justify-start>
+          <v-list>
+            <v-list-tile>
+              <v-list-tile-content>
+                <v-card-title
+                  class="primary--text font-weight-bold headline"
+                >{{ $lang.user._users_list }}</v-card-title>
+                <v-list-tile-sub-title>{{ userRole }}</v-list-tile-sub-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list>
+          <!-- <v-flex xs12 sm6 md4>
             <v-card-title class="display-1 primary--text">{{ $lang.user._users_list }}</v-card-title>
-          </v-flex>
-          <v-flex xs12 sm6 md4 class="mt-3">
-            <add-user></add-user>
-          </v-flex>
+          </v-flex>-->
+          <!-- <v-flex xs12 sm6 md4 class="mt-3">
+          </v-flex>-->
         </v-layout>
+        <hr class="mt-3">
         <v-list two-line dark>
           <v-list-tile v-for="(user, i) in users" v-on:click="openModal" :key="i" dark>
             <v-list-tile-content>
